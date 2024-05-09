@@ -21,7 +21,7 @@ export default function Services() {
     };
 
     return (
-        <div className="mb-[144.18px] h-[1229px]" style={vectorStyle}>
+        <div id="services" className="mb-[144.18px] h-[1229px]" style={vectorStyle}>
             <div className="container items-center justify-center pt-[42px] ps-[32px] pe-[28px] ms-[169px]" style={{ maxWidth: "75%" }}>
                 <h1 className="roboto-bold" style={{ fontSize: "32px", lineHeight: "40px", letterSpacing: "-0.64px", color: "#576250" }}>Services</h1>
                 <p className="w-[214px] mt-[4px] text-base" style={{ lineHeight: "24px", color: "#B8C1B2" }}>to plan and orchestrate your special occasion</p>
