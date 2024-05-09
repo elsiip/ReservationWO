@@ -24,7 +24,7 @@ export default function Portfolios() {
     const portfoliosChunks = chunkArray(portfoliosData, 2);
 
     return (
-        <div className="container w-[1038px] mt-[55px] mx-[201px] pe-[28px] mb-[70px]" style={{ maxWidth: "73%" }}>
+        <div id="portofolios" className="container w-[1038px] mt-[55px] mx-[201px] pe-[28px] mb-[70px]" style={{ maxWidth: "73%" }}>
             <h2 className="roboto-medium text-xl text-[#90998B]" style={{ lineHeight: '28px' }}>Our portfolios</h2>
             {portfoliosChunks.map((chunk, index) => (
                 <div key={index} className="flex space-x-[16px] mt-[16px]">

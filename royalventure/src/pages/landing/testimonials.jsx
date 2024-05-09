@@ -6,7 +6,7 @@ import Testimonial3 from "../../assets/testimonial3.png";
 
 export default function Testimonials() {
     return(
-        <div className="p-0 m-0">
+        <div className="p-0 m-0" id="testimonials">
             <div className="carousel w-full">
                 <div id="slide1" className="carousel-item relative w-full bg-[#585B56]">
                 <div className="justify-center items-center text-center">
@@ -24,7 +24,7 @@ export default function Testimonials() {
                         <h1 className="roboto-medium text-white text-sm mt-[9px] mb-[79px]" style={{lineHeight: '22px'}}>Joy & Jordan</h1>
                     </div>
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide4" className="btn btn-circle">❮</a> 
+                        <a href="#slide3" className="btn btn-circle">❮</a> 
                         <a href="#slide2" className="btn btn-circle">❯</a>
                     </div>
                 </div> 
@@ -39,7 +39,7 @@ export default function Testimonials() {
                             <h1 className="text-[128px] roboto-bold text-[#464D43]" style={{lineHeight: '136px', letterSpacing: '-2.56px'}}>”</h1>
                         </div>
                         <div className="flex justify-center items-center mt-[48px]">
-                            <img src={Testimonial2} alt="Testimonial Joy & Jordan" className="w-[88px] h-[88px]"/>
+                            <img src={Testimonial2} alt="Testimonial Charlotte & William" className="w-[88px] h-[88px]"/>
                         </div>
                         <h1 className="roboto-medium text-white text-sm mt-[9px] mb-[79px]" style={{lineHeight: '22px'}}>Charlotte & William</h1>
                     </div>
@@ -59,13 +59,13 @@ export default function Testimonials() {
                             <h1 className="text-[128px] roboto-bold text-[#464D43]" style={{lineHeight: '136px', letterSpacing: '-2.56px'}}>”</h1>
                         </div>
                         <div className="flex justify-center items-center mt-[48px]">
-                            <img src={Testimonial3} alt="Testimonial Joy & Jordan" className="w-[88px] h-[88px]"/>
+                            <img src={Testimonial3} alt="Testimonial Im Sol & Ryu Seon Jae" className="w-[88px] h-[88px]"/>
                         </div>
-                        <h1 className="roboto-medium text-white text-sm mt-[9px] mb-[79px]" style={{lineHeight: '22px'}}>Lim Sol & Ryu SeonJae</h1>
+                        <h1 className="roboto-medium text-white text-sm mt-[9px] mb-[79px]" style={{lineHeight: '22px'}}>Im Sol & Ryu Seon Jae</h1>
                     </div>
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                     <a href="#slide2" className="btn btn-circle">❮</a> 
-                    <a href="#slide4" className="btn btn-circle">❯</a>
+                    <a href="#slide1" className="btn btn-circle">❯</a>
                     </div>
                 </div> 
                 
