@@ -6,6 +6,7 @@ import SignUp from "./pages/signUp"
 import History from "./pages/history"
 import { ToastContainer } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css'
+import ChatAi from "./pages/chatAi"
 // import { Provider } from "react-redux"
 
 
@@ -19,6 +20,7 @@ function App() {
             <Route path="/signin" element={<SignIn />}/>
             <Route path="/signup" element={<SignUp />}/>
             <Route path="/history" element={<History />}/>
+            <Route path="/chatai" element={<ChatAi/>} />
           </Routes>
         </Router>
         <ToastContainer />
