@@ -17,6 +17,7 @@ export default function Navbar() {
                 <img src={Logo} alt="Logo" />
             </NavLink>
             <div className='flex space-x-[40px]'>
+                <NavLink to="/" className="text-white">Home</NavLink>
                 <button className='text-white'> Packages</button>
                 <button className='text-white'> Services</button>
                 <button className='text-white'> Testimonials</button>
