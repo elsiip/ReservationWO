@@ -100,9 +100,9 @@ export default function ChatAi() {
         <div className="bg-[#576250]">
             <Navbar />
             <div className="mt-[70px] mb-[100px]">
-                <h1 className="mt-[25px] roboto-bold text-[56px] text-center text-white" style={{ lineHeight: '64px', letterSpacing: '-1.12px' }}>Hi, {userName}!</h1>
-                <p className="mt-[25px] roboto-regular text-[25px] text-center text-[#D9D9D9]" style={{ lineHeight: '24px', letterSpacing: '-0.2px' }}>FAQ</p>
-                <div className="flex justify-center mt-[70px]">
+                <h1 className=" roboto-bold text-[56px] text-center text-white" style={{ lineHeight: '64px', letterSpacing: '-1.12px' }}>Hi, {userName}!</h1>
+                <p className="mt-[16px] roboto-regular text-[25px] text-center text-[#D9D9D9]" style={{ lineHeight: '24px', letterSpacing: '-0.2px' }}>FAQ</p>
+                <div className="flex justify-center mt-[79px]">
                     <div className="bg-white rounded-lg shadow-lg p-6 max-w-3xl w-full">
                         <div className="flex items-center mb-4">
                             <ReactMarkDown className="text-gray-800 flex-grow">{answer}</ReactMarkDown>

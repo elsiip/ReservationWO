@@ -64,24 +64,24 @@ export default function SignIn(){
     return(
         <div className="relative" style={heroStyle}>
             <Navbar />
-            <div className='container w-[500px] pb-[24.43px] bg-[#F5F5F5] ms-[113px] mt-[130px] rounded-[30px] px-[40px] pt-[22px]'>
+            <div className='container w-[500px] pb-[24.43px] bg-[#F5F5F5] ms-[113px] mt-[85px] rounded-[30px] px-[40px] pt-[22px]'>
                 <h1 className='roboto-medium text-black text-center text-[28px] mb-[27px]' style={{lineHeight: '24px'}}>Welcome Back!</h1>
                 <h2 className='roboto-bold text-black text-[38px] text-center mb-[27px]' style={{lineHeight: '24px'}}>SIGN IN</h2>  
                 <Formik initialValues={{ email: '', password: ''}} validationSchema={validationSchema} onSubmit={handleLogin}>
                     {({errors, touched, isSubmitting }) => (
                         <Form className="needs-validation form-control">
                             <div>
-                                <label htmlFor="email" className='roboto-light text-[18px] text-black mb-[10.43px]'>Email</label>
-                                <Field type="email" name="email" placeholder='signin@gmail.com' className="form-control input input-bordered w-full h-[40px] mb-[27px]" />
+                                <label htmlFor="email" className='roboto-light text-[18px] text-black mb-[9.43px]'>Email</label>
+                                <Field type="email" name="email" placeholder='signin@gmail.com' className="form-control input input-bordered w-full h-[40px] mb-[20px]" />
                                 <ErrorMessage name="email" component="div" className="text-red-500 invalid-feedback" />
                             </div>
                             <div>
-                                <label htmlFor="password" className='roboto-light text-[18px] text-black mb-[10.43px]'>Password</label>
-                                <Field type="password" name="password" placeholder='********' className="form-control input input-bordered w-full h-[40px] mb-[27px]" />
+                                <label htmlFor="password" className='roboto-light text-[18px] text-black mb-[9.43px]'>Password</label>
+                                <Field type="password" name="password" placeholder='********' className="form-control input input-bordered w-full h-[40px] mb-[20px]" />
                                 <ErrorMessage name="password" component="div" className="text-red-500 invalid-feedback" />
                             </div>                            
                             <div className='col-12 text-red-500 mt-2'>{errorMessage}</div>
-                            <div className='mt-[27px] mb-[24.66px] flex justify-center'>
+                            <div className='mt-[20px] mb-[20.66px] flex justify-center'>
                                 <button type='submit' className="btn rounded-[23px] w-[150px] h-[47.99px] bg-[#A19E96] hover:bg-[#576250] text-white text-base roboto-medium" disabled={isSubmitting || isLoading}>
                                     {isLoading ? (
                                         <span className="loading loading-dots loading-sm"></span>
