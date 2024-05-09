@@ -81,8 +81,11 @@ export default function Reservation() {
                     <div className="mt-[24px]">
                         <label htmlFor="getMerried" className="roboto-medium text-base text-[#576250]" style={{ lineHeight: '24px' }}>Who's getting married</label>
                         <input type="text" name="partner1" id="partner1" placeholder="Partner 1" className="input input-bordered w-full h-[40px] mt-[16px]" onChange={formik.handleChange} value={formik.values.partner1} />
+                        {formik.touched.partner1 && formik.errors.partner1 ? <div style={{ color: 'red' }}>{formik.errors.partner1}</div> : null}
                         <input type="text" name="partner2" id="partner2" placeholder="Partner 2" className="input input-bordered w-full h-[40px] mt-[16px]" onChange={formik.handleChange} value={formik.values.partner2} />
+                        {formik.touched.partner2 && formik.errors.partner2 ? <div style={{ color: 'red' }}>{formik.errors.partner2}</div> : null}
                         <input type="datetime-local" name="date" id="date" className="input input-bordered w-full h-[40px] mt-[16px]" onChange={formik.handleChange} value={formik.values.date} />
+                        {formik.touched.date && formik.errors.date ? <div style={{ color: 'red' }}>{formik.errors.date}</div> : null}
                     </div>
                     <div className="mt-[16px]">
                         <select className="select select-bordered w-full h-[40px]" name="package" onChange={formik.handleChange} value={formik.values.package}>

@@ -6,7 +6,7 @@ import Navbar from "../../components/navbar";
 import Footer from "../../components/footer";
 import { getAuth } from "firebase/auth";
 import { db } from '../../firebase'; 
-import { query, where, collection, getDocs, doc, deleteDoc, addDoc, updateDoc } from 'firebase/firestore';
+import { query, where, collection, getDocs } from 'firebase/firestore';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleUser, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 
@@ -18,20 +18,58 @@ export default function ChatAi(){
     const [answer, setAnswer] = useState('')
     const [generatingAnswer, setGeneratingAnswer] = useState(false)
 
+    // Data jawaban berdasarkan keyword
+    const answerData = {
+        "sedia paket": "Tersedia 3 macam paket yaitu intimate, seaside, dan grand wedding",
+        "Royal Venture": "Royal Venture adalah mitra pernikahan Anda yang sempurna, menawarkan tiga paket eksklusif yang mencakup segalanya untuk memastikan hari istimewa Anda berjalan mulus. Dari dekorasi istana hingga layanan fotografi yang berkelas, kami mengurus segalanya. Pilihlah paket yang sesuai dengan gaya dan anggaran Anda, dan nikmati momen berharga Anda di salah satu dari tiga lokasi yang indah dan berbeda yang kami sediakan. Jadikan pernikahan Anda mewah dan tak terlupakan dengan bantuan Royal Venture",
+        "berapa intimate": "Paket Intimate Wedding yang berlokasi di Malang, dirancang untuk 30 orang dengan biaya Rp. 35.000.000.",
+        "berapa seaside": "Paket Seaside Elegance Wedding yang berlokasi di pesisir pantai Pulau Bali, dirancang untuk 100 orang dengan biaya Rp. 210.000.000.",
+        "berapa grand": "Paket Grand Wedding yang berlokasi di Jakarta Selatan, dirancang untuk 600 orang dengan biaya Rp. 455.000.000.",
+        "lokasi vanue": "Untuk informasi vanue, dapat melakukan reservasi untuk pembahasan lebih lanjut.",
+        "menambah reservasi": "Untuk melakukan reservasi, silakan isi formulir reservasi di halaman home kami, lalu pilih menu reservasi pada bagian atas.",
+        "batal reservasi": "Jika ingin melakukan pembatalan reservasi dapat menuju halaman history untuk pengajuan pembatalan dengan klik Cancelled pada reservasi yang ingin dibatalkan.",
+        "ubah reservasi": "Jika ingin melakukan perubahan reservasi dapat menuju halaman history untuk pengajuan perubahan dengan klik Change pada reservasi yang ingin diubah.",
+        "layanan intimate wedding": "Pada paket Intimate wedding sudah include dekorasi standar, handbouquet, Makeup bride and family, gown and tuxedo, simple wedding cake, photo, video, and canape / lunch / dinner.",
+        "layanan seaside elegance wedding":"Pada paket Seaside Elegance Wedding sudah include 2 menginap dengan 8 kamar, event fee, beverage, buffet, decoration, acounstic band, DJ, Makeup, Gown, Suits, Photography, dan videography",
+        "layanan grand wedding" : "Pada paket Grand Wedding sudah include celebrant, 2 wedding cake, venue, catering, decoration, photo corner, makeup, hairdo, MC, singer and keyboardist, photography, videography, photobooth, souvenir, wedding car, gown and suit",
+        "testimoni" : "Testimoni paket Seaside Elegance Wedding dari Joy dan Jordan. I cannot emphasize enough how grateful I am to Royal Venture Wedding Organizer. From our first meeting to our wedding day, they have shown an exceptional level of professionalism and attention to every detail. Not only did they assist us in planning every aspect of the wedding, but they also provided the much-needed emotional support throughout the preparation. The result? Our dream wedding came true without stress and worries. I highly recommend Royal Venture Wedding Organizer to anyone looking for an unforgettable wedding service.",
+        "testimoni lain" : "Testimoni paket Seaside Elegance Wedding dari Charlotte & William. We consider ourselves lucky to have worked with Royal Venture Wedding Organizer. They not only helped us navigate the complex world of weddings but also became outstanding partners in designing our event. From vendor selection to meeting scheduling, every step was carried out meticulously and with care. Our wedding was so beautiful and memorable thanks to the dedication and hard work of their team. Thank you, Royal Venture Wedding Organizer, for everything!"
+    };
+
     async function generateAnswer(e){
         e.preventDefault();
         setGeneratingAnswer(true);
         setAnswer('Loading your answers... \n It might take up to 10 seconds');
+    
         try {
-            const response = await axios({
-                url: 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=AIzaSyDMCYxHypBRpsZ6czn8W6Tx-5QjWBXx-WA',
-                method: 'post',
-                data: {
-                    contents: [{parts: [{text: question}] }]
+            let foundAnswer = null;
+            const questionWords = question.toLowerCase().split(" ");
+    
+            // Cari jawaban berdasarkan keyword
+            Object.keys(answerData).forEach(keyword => {
+                // Memisahkan keyword menjadi array kata-kata
+                const keywordWords = keyword.toLowerCase().split(" ");
+                // Memeriksa apakah setiap kata dalam keyword ada dalam pertanyaan
+                const keywordFound = keywordWords.every(word => questionWords.includes(word));
+                if (keywordFound) {
+                    foundAnswer = answerData[keyword];
                 }
             });
-            setAnswer(response.data.candidates[0].content.parts[0].text);
-            setQuestion('')
+    
+            if(foundAnswer) {
+                setAnswer(foundAnswer);
+            } else {
+                // Jika pertanyaan tidak terdapat dalam dataset, gunakan Google AI
+                const response = await axios({
+                    url: 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=AIzaSyDMCYxHypBRpsZ6czn8W6Tx-5QjWBXx-WA',
+                    method: 'post',
+                    data: {
+                        contents: [{parts: [{text: question}] }]
+                    }
+                });
+                setAnswer(response.data.candidates[0].content.parts[0].text);
+            }
+            setQuestion('');
         } catch (error) {
             console.log(error);
             setAnswer("Something went wrong. please try again!");
@@ -51,8 +89,7 @@ export default function ChatAi(){
                     }
                 });
             }
-        };
-      
+        }
         if (user) {
             fetchUserName();
         }
