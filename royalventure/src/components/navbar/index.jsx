@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { Link as ScrollLink } from 'react-scroll';
 import Logo from '../../assets/logo.png';
 import '../../App.css';
 import useAuth from "../../hook/authContext";
@@ -18,10 +19,10 @@ export default function Navbar() {
             </NavLink>
             <div className='flex space-x-[40px]'>
                 <NavLink to="/" className="text-white">Home</NavLink>
-                <button className='text-white'> Packages</button>
-                <button className='text-white'> Services</button>
-                <button className='text-white'> Testimonials</button>
-                <button className='text-white'> Reservation</button>
+                <ScrollLink to="packages" smooth={true} duration={1500} className='text-white cursor-pointer'> Packages</ScrollLink>
+                <ScrollLink to="services" smooth={true} duration={2500} className='text-white cursor-pointer'> Services</ScrollLink>
+                <ScrollLink to="testimonials" smooth={true} duration={3500} className='text-white cursor-pointer'> Testimonials</ScrollLink>
+                <ScrollLink to="reservation" smooth={true} duration={4500} className='text-white cursor-pointer'> Reservation</ScrollLink>
                 <NavLink to="/history" className='text-white'>History</NavLink>
                 {currentUser ? (
                     <span className="text-gray-400 cursor-not-allowed">Sign In/Sign Up</span>
