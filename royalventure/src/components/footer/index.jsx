@@ -38,7 +38,7 @@ export default function Footer() {
                 <button>About us</button>
                 <NavLink to="/history" className="text-white">History</NavLink>               
                 <button>Privacy Policy</button>
-                <button>FAQ</button>
+                <NavLink to="/chatai" className="text-white">FAQ</NavLink>
             </div>
             <div className='flex space-x-[8px] text-white'>
                 <button><FontAwesomeIcon icon={faFacebook} className='w-[24px] h-[24px]' /></button>
