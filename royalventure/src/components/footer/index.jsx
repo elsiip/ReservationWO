@@ -36,7 +36,10 @@ export default function Footer() {
                     <span className="text-gray-400 cursor-not-allowed">Sign Out</span>
                 )}
                 <button>About us</button>
-                <NavLink to="/history" className="text-white">History</NavLink>               
+                {currentUser && (
+                    <NavLink to="/history" className='text-white'>History</NavLink>
+                )}
+                {/* <NavLink to="/history" className="text-white">History</NavLink>                */}
                 <button>Privacy Policy</button>
                 <NavLink to="/chatai" className="text-white">FAQ</NavLink>
             </div>
