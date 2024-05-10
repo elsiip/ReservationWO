@@ -10,7 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleUser, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 
 export default function ChatAi() {
-    const [userName, setUserName] = useState("Default Name");
+    const [userName, setUserName] = useState("");
     const auth = getAuth();
     const user = auth.currentUser;
     const [question, setQuestion] = useState("");
@@ -18,7 +18,7 @@ export default function ChatAi() {
     const [generatingAnswer, setGeneratingAnswer] = useState(false);
 
     const answerData = {
-        "sedia paket": "Tersedia 3 macam paket yaitu intimate, seaside, dan grand wedding",
+        "paket tersedia": "Tersedia 3 macam paket yaitu intimate, seaside, dan grand wedding",
         "Royal Venture": "Royal Venture adalah mitra pernikahan Anda yang sempurna, menawarkan tiga paket eksklusif yang mencakup segalanya untuk memastikan hari istimewa Anda berjalan mulus. Dari dekorasi istana hingga layanan fotografi yang berkelas, kami mengurus segalanya. Pilihlah paket yang sesuai dengan gaya dan anggaran Anda, dan nikmati momen berharga Anda di salah satu dari tiga lokasi yang indah dan berbeda yang kami sediakan. Jadikan pernikahan Anda mewah dan tak terlupakan dengan bantuan Royal Venture",
         "berapa intimate": "Paket Intimate Wedding yang berlokasi di Malang, dirancang untuk 30 orang dengan biaya Rp. 35.000.000.",
         "berapa seaside": "Paket Seaside Elegance Wedding yang berlokasi di pesisir pantai Pulau Bali, dirancang untuk 100 orang dengan biaya Rp. 210.000.000.",
@@ -100,7 +100,7 @@ export default function ChatAi() {
         <div className="bg-[#576250]">
             <Navbar />
             <div className="mt-[70px] mb-[100px]">
-                <h1 className=" roboto-bold text-[56px] text-center text-white" style={{ lineHeight: '64px', letterSpacing: '-1.12px' }}>Hi, {userName}!</h1>
+                <h1 className=" roboto-bold text-[56px] text-center text-white" style={{ lineHeight: '64px', letterSpacing: '-1.12px' }}>Hi {userName}!</h1>
                 <p className="mt-[16px] roboto-regular text-[25px] text-center text-[#D9D9D9]" style={{ lineHeight: '24px', letterSpacing: '-0.2px' }}>FAQ</p>
                 <div className="flex justify-center mt-[79px]">
                     <div className="bg-white rounded-lg shadow-lg p-6 max-w-3xl w-full">
