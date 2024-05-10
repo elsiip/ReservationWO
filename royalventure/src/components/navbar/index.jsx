@@ -23,7 +23,10 @@ export default function Navbar() {
                 <ScrollLink to="services" smooth={true} duration={2500} className='text-white cursor-pointer'> Services</ScrollLink>
                 <ScrollLink to="testimonials" smooth={true} duration={3500} className='text-white cursor-pointer'> Testimonials</ScrollLink>
                 <ScrollLink to="reservation" smooth={true} duration={4500} className='text-white cursor-pointer'> Reservation</ScrollLink>
-                <NavLink to="/history" className='text-white'>History</NavLink>
+                {currentUser && (
+                    <NavLink to="/history" className='text-white'>History</NavLink>
+                )}
+                {/* <NavLink to="/history" className='text-white'>History</NavLink> */}
                 {currentUser ? (
                     <span className="text-gray-400 cursor-not-allowed">Sign In/Sign Up</span>
                 ) : (

@@ -146,7 +146,7 @@ export default function History() {
             <Navbar />
             <h1 className="mt-[150.5px] roboto-bold text-[56px] text-center text-white" style={{ lineHeight: '64px', letterSpacing: '-1.12px' }}>Hi, {userName}!</h1>
             <p className="mt-[16px] roboto-regular text-[25px]] text-center text-[#D9D9D9]" style={{ lineHeight: '24px', letterSpacing: '-0.2px' }}>History Reservation</p>
-            <div className="container py-[27px] px-[44.5px] w-[1019px] bg-[#D9D9D9] overflow-x-auto" style={{ margin: '39.5px auto' }}>
+            <div className="container py-[27px] px-[44.5px] w-[1019px] bg-[#D9D9D9] overflow-x-auto" style={{ margin: '39.5px auto', marginBottom:'105px' }}>
                 <table className="table table-zebra">
                     {/* head */}
                     <thead>
@@ -167,8 +167,8 @@ export default function History() {
                                 </td>
                                 <td className="roboto-thin text-[15px] text-black" style={{ lineHeight: '24px' }}>{reservation.package}</td>
                                 <td className="roboto-thin text-[15px] text-black" style={{ lineHeight: '24px' }}>
-                                    <button className="btn bg-[#A19E96] hover:bg-[#576250] text-white me-3" onClick={() => handleEditModalOpen(reservation)}>Change</button>
-                                    <button className="btn bg-red-300 hover:bg-red-500 text-white" onClick={() => {
+                                    <button className="btn bg-[#A19E96] hover:bg-[#576250] roboto-regular text-white me-3" onClick={() => handleEditModalOpen(reservation)}>Change</button>
+                                    <button className="btn bg-red-300 hover:bg-red-500 roboto-regular text-white" onClick={() => {
                                         setSelectedReservation(reservation);
                                         document.getElementById('deleteModal').showModal();
                                     }}>Cancelled</button>
@@ -181,7 +181,7 @@ export default function History() {
             {/* Modal for delete reason */}
             <dialog id="deleteModal" className="modal">
                 <div className="modal-box">
-                    <h3 className="font-bold text-lg">Provide a Reason for Reservation Cancellation</h3>
+                    <h3 className="roboto-bold text-lg">Provide a Reason for Reservation Cancellation</h3>
                     <textarea value={deleteReason} onChange={(e) => setDeleteReason(e.target.value)} className="py-4 px-2 border w-full h-32 my-2" placeholder="Enter reason for deletion"></textarea>
                     <div className="modal-action">
                         <button className="btn bg-red-300 hover:bg-red-500 text-white" onClick={handleDelete}>Delete</button>
@@ -192,7 +192,7 @@ export default function History() {
             {/* Modal for edit reservation */}
             <dialog id="editModal" className="modal">
                 <div className="modal-box">
-                    <h3 className="font-bold text-lg">Edit Reservation</h3>
+                    <h3 className="roboto-bold text-lg">Edit Reservation</h3>
                     <input type="datetime-local" className="input input-bordered w-full h-[40px] mt-[16px]" onChange={(e) => setEditData({...editData, date: e.target.value})} value={editData.date} />
                     <div className="mt-[16px]">
                         <select className="select select-bordered w-full h-[40px]" onChange={(e) => setEditData({...editData, package: e.target.value})} value={editData.package}>

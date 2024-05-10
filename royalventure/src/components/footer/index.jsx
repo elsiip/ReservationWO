@@ -23,7 +23,10 @@ export default function Footer() {
 
     return (
         <footer className={`px-[200px] py-[20px] flex justify-between items-center roboto-regular`} style={{backgroundColor: '#424242'}}>
-            <img src={Logo} alt="Logo" />
+            <NavLink to="/" className="flex items-center">
+                <img src={Logo} alt="Logo" />
+            </NavLink>
+            {/* <img src={Logo} alt="Logo" /> */}
             <div className='flex space-x-[40px] text-white'>
                 {currentUser ? (
                     <span className="text-gray-400 cursor-not-allowed">Sign In/Sign Up</span>
@@ -36,7 +39,10 @@ export default function Footer() {
                     <span className="text-gray-400 cursor-not-allowed">Sign Out</span>
                 )}
                 <button>About us</button>
-                <NavLink to="/history" className="text-white">History</NavLink>               
+                {currentUser && (
+                    <NavLink to="/history" className='text-white'>History</NavLink>
+                )}
+                {/* <NavLink to="/history" className="text-white">History</NavLink>                */}
                 <button>Privacy Policy</button>
                 <NavLink to="/chatai" className="text-white">FAQ</NavLink>
             </div>

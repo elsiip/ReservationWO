@@ -68,7 +68,7 @@ export default function SignUp(){
     return(
         <div style={heroStyle}>
             <Navbar />
-            <div className='container w-[500px] pb-[24.43px] bg-[#F5F5F5] ms-[113px] mt-[75px] mb-[168.88px] rounded-[30px] px-[40px] pt-[22px]'>
+            <div className='container w-[500px] pb-[24.43px] bg-[#F5F5F5] ms-[113px] mt-[50px] mb-[168.88px] rounded-[30px] px-[40px] pt-[22px]'>
                 <h1 className='roboto-medium text-black text-center text-[28px] mb-[27px]' style={{lineHeight: '24px'}}>Welcome</h1>
                 <h2 className='roboto-bold text-black text-[38px] text-center mb-[27px]' style={{lineHeight: '24px'}}>SIGN UP</h2>  
                 <Formik initialValues={{name: '', email: '', password: ''}} validationSchema={validationSchema} onSubmit={handleSignUp}>
@@ -90,7 +90,7 @@ export default function SignUp(){
                                 <ErrorMessage name='password' component='div' className='text-red-500 invalid-feedback' />
                             </div>
                             <div className='col-12 text-red-500'>{errorMessage}</div>
-                            <div className='mt-[27px] mb-[24.66px] flex justify-center'>
+                            <div className='mt-[27px] mb-[24.26px] flex justify-center'>
                                 <button type='submit' className="btn rounded-[23px] w-[150px] h-[47.99px] bg-[#A19E96] hover:bg-[#576250] text-white text-base roboto-medium" disabled={isSubmitting || isLoading}>
                                     {isLoading ? (
                                         <span className="loading loading-dots loading-sm"></span>
@@ -102,7 +102,7 @@ export default function SignUp(){
                         </Form>
                     )}
                 </Formik>
-                <h1 className='text-center roboto-regular text-[#73737C] text-base mb-[22px]' style={{lineHeight: '24px'}}>You have account?
+                <h1 className='text-center roboto-regular text-[#73737C] text-base' style={{lineHeight: '24px'}}>You have account?
                     <Link to='/signin' className='no-underline'>
                         <span className='roboto-bold text-base text-[#576250]'> Sign in now</span>
                     </Link>
