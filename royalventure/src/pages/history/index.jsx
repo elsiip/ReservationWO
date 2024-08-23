@@ -142,7 +142,7 @@ export default function History() {
     };
 
     return (
-        <div className="bg-[#576250]">
+        <div className="bg-[#576250] h-screen">
             <Navbar />
             <h1 className="mt-[150.5px] roboto-bold text-[56px] text-center text-white" style={{ lineHeight: '64px', letterSpacing: '-1.12px' }}>Hi, {userName}!</h1>
             <p className="mt-[16px] roboto-regular text-[25px]] text-center text-[#D9D9D9]" style={{ lineHeight: '24px', letterSpacing: '-0.2px' }}>History Reservation</p>

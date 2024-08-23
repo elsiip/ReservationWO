@@ -97,7 +97,7 @@ export default function ChatAi() {
     }, [user]);
 
     return (
-        <div className="bg-[#576250]">
+        <div className="bg-[#576250] h-screen">
             <Navbar />
             <div className="mt-[70px] mb-[100px]">
                 <h1 className=" roboto-bold text-[56px] text-center text-white" style={{ lineHeight: '64px', letterSpacing: '-1.12px' }}>Hi {userName}!</h1>

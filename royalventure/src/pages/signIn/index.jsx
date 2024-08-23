@@ -62,7 +62,7 @@ export default function SignIn(){
     };
 
     return(
-        <div className="relative" style={heroStyle}>
+        <div className="relative h-screen" style={heroStyle}>
             <Navbar />
             <div className='container w-[500px] pb-[24.43px] bg-[#F5F5F5] ms-[113px] mt-[85px] rounded-[30px] px-[40px] pt-[22px]'>
                 <h1 className='roboto-medium text-black text-center text-[28px] mb-[27px]' style={{lineHeight: '24px'}}>Welcome Back!</h1>

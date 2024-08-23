@@ -15,7 +15,7 @@ export default function Hero(){
     return(
         <div className="relative" style={heroStyle}>
             <Navbar />
-            <div className="container justify-center items-center mt-[100px] px-[200px]" style={{ maxWidth: '100%'}}>
+            <div className="container justify-center items-center mt-[100px] px-[200px] h-screen" style={{ maxWidth: '100%'}}>
                 <h1 className="roboto-bold text-center" style={{fontSize: '56px', lineHeight: '1.2', maxWidth: '90%', margin: 'auto', color: '#576250'}}>Crafting Your Dream Wedding, Seamlessly Executed.</h1> 
                 <p className="roboto-regular text-center text-base pt-[16px]" style={{lineHeight: '24px', maxWidth: '70%', margin: 'auto', color: '#90998B'}}>Welcome to your dream wedding destination! We are committed to bringing every aspect of your wedding dreams to life seamlessly. From planning to execution, our expert team is ready to take on every detail with precision. Discover how we can turn your wedding dreams into reality.</p>
                 <div className="mt-[56px]" style={{ textAlign: 'center' }}> 

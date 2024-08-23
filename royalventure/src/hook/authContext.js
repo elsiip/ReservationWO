@@ -1,18 +1,16 @@
 import { useState, useEffect } from 'react';
-import { auth } from '../firebase'; // Import instance auth dari Firebase Anda
+import { auth } from '../firebase'; 
 
 const useAuth = () => {
-    const [currentUser, setCurrentUser] = useState(null); // Status pengguna yang sudah masuk
+    const [currentUser, setCurrentUser] = useState(null); 
 
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged(user => {
-            setCurrentUser(user); // Perbarui status pengguna yang sudah masuk saat perubahan status otentikasi terjadi
+            setCurrentUser(user); 
         });
 
-        // Unsubscribe dari listener ketika komponen dilepas
         return () => unsubscribe();
     }, []);
-
     return { currentUser };
 };
 

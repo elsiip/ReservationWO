@@ -68,7 +68,7 @@ export default function SignUp(){
     return(
         <div style={heroStyle}>
             <Navbar />
-            <div className='container w-[500px] pb-[24.43px] bg-[#F5F5F5] ms-[113px] mt-[50px] mb-[168.88px] rounded-[30px] px-[40px] pt-[22px]'>
+            <div className='container h-screen w-[500px] pb-[24.43px] bg-[#F5F5F5] ms-[113px] mt-[50px] mb-[168.88px] rounded-[30px] px-[40px] pt-[22px]'>
                 <h1 className='roboto-medium text-black text-center text-[28px] mb-[27px]' style={{lineHeight: '24px'}}>Welcome</h1>
                 <h2 className='roboto-bold text-black text-[38px] text-center mb-[27px]' style={{lineHeight: '24px'}}>SIGN UP</h2>  
                 <Formik initialValues={{name: '', email: '', password: ''}} validationSchema={validationSchema} onSubmit={handleSignUp}>

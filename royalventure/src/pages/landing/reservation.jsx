@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../../App.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram, faTwitter } from "@fortawesome/free-brands-svg-icons";
-import { db } from '../../firebase'; // Import instance firestore Anda
+import { db } from '../../firebase'; 
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import useAuth from "../../hook/authContext";
 import { useFormik } from 'formik';

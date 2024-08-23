@@ -5,6 +5,8 @@ import Logo from '../../assets/logo.png';
 import '../../App.css';
 import useAuth from "../../hook/authContext";
 
+// testing branch
+
 export default function Navbar() {
     const navbarStyle = {
         backgroundColor: 'transparent', 
